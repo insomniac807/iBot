@@ -1,0 +1,8 @@
+{
+    "token": "",
+    "clientId": "",
+    "guildId": "",
+    "clientSecret": "",
+    "redirectUri":"",
+    "discordLoginUri":""
+}
