@@ -4,5 +4,6 @@
     "guildId": "",
     "clientSecret": "",
     "redirectUri":"",
-    "discordLoginUri":""
+    "discordLoginUri":"",
+    "mongodbPassword": ""
 }
