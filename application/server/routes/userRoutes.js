@@ -1,20 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const { getUser, setUser, updateUser, deleteUser  } = require('../database/db_services/userServices');
 
-router.get('/', (req, res) => {
-    res.json({message: "Get User!"});
-}); 
-
-router.post('/', (req, res) => {
-    res.json({message: "Set User!"});
-}); 
-
-router.put('/:id', (req, res) => {
-    res.json({message : `Update User ${req.params.id}`});
-}); 
-
-router.delete('/:id', (req, res) => {
-    res.json({message : `Delete User ${req.params.id}`});
-}); 
+router.route('/').get(getUser).post(setUser);
+router.route('/:id').put(updateUser).delete(deleteUser);
 
 module.exports = router;
