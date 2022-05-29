@@ -1,4 +1,4 @@
-const { mongodbPassword } = require('../../config.json');
+const { mongodbPassword } = require('../../../config.json');
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = `mongodb+srv://igo:${mongodbPassword}@igodiscord.dmtam.mongodb.net/?retryWrites=true&w=majority`;
