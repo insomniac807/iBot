@@ -1,14 +1,16 @@
-module.exports = class User {
-    constructor(name) {
-        this.name = name;
+const mongoose = require('mongoose');
+
+const userSchema = mongoose.Schema({
+    _id: {
+        type: String,
+        required: [true, 'Must Include User ID']
+    },
+    username: {
+        type: String,
+        required: [true, 'Must Include Username']
     }
-    hello() {
-        return `Hello my name is ${name}!`;
-    }
-    setName(name) {
-        this.name = name;
-    }
-    getName() {
-        return this.name;
-    }
-}
+}, {
+    timestamps: true
+})
+
+module.exports = mongoose.model('User', userSchema);
