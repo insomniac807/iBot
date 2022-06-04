@@ -1,0 +1,20 @@
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const gapi = require('gapi');
+const YT_DATA_API_KEY = process.env.YOUTUBE_DATA_API_V3;
+
+gapi.server.setApiKey(YT_DATA_API_KEY);
+
+
+module.exports = {
+	data: new SlashCommandBuilder()
+		.setName('yt')
+		.setDescription('Get videos from youtube')
+        .addStringOption(option => {
+            return option.setName('search-terms')
+                  .setDescription('What do you want to search for?')
+                  .setRequired(true)
+        }),
+	async execute(interaction) {
+        await interaction.reply(interaction.options.getString('search-terms'));
+	},
+};
